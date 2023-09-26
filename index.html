@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Presentación Personal</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>PRESENTACION PERSONAL</h1>
+    <hr>
+    <h2>Avatar</h2>
+    <img src="https://pbs.twimg.com/media/FpnCYc2XsAMT9dR.png" alt='Avatar' width="200px"/>
+    <hr>
+    <h2>Presentación Personal</h2>
+    <p class="hidden" id="presentacion">
+       Buenas con todos, mi nombre es Roy Shaider Chuchullo Pucho, tengo 18 años y estoy estudiando 
+       en la carrera de Diseño y Desarrollo de Software en el Instituto de TECSUP, actualmente estoy 
+       en el III Ciclo de mi carrera.</p>
+    <button class="toggle-button" onclick="toggleContent('presentacion')">Mostrar/ocultar</button>    
+    <hr>
+    <h2>Sobre Mi</h2>
+    <p class="hidden" id="sobre-mi">
+       Cosas que me gustan hacer son ver series y películas, escuchar música mientras veo galerías o 
+       cuando juego videojuegos. Algo que me apasiona son los videojuegos de estilo "2D", imágenes con 
+       estilo anime, también me gusta escuchar rock-japonés.</p>
+    <button class="toggle-button" onclick="toggleContent('sobre-mi')">Mostrar/ocultar</button>
+    <hr>
+    <h2>Tecnologías y Lenguajes de Programación</h2>
+    <p class="hidden" id="tecnologias">
+       Algunos lenguajes de Programación que he aprendido mediante mi carrera son Python, Java y HTML. 
+       Entre otras cosas también conozco el tema de base de datos, como MongoDB o Oracle </p>
+    <button class="toggle-button" onclick="toggleContent('tecnologias')">Mostrar/ocultar</button>
+    <hr>
+    <h2>Formación Profesional</h2>
+    <p class="hidden" id="formacion">
+       Bueno acerca de eso, considero que desde el ingreso a TECSUP, es donde comienza mi formación 
+       personal ya que fue ahí donde aprendí las actividades o el trabajo que realiza la carrera que 
+       escogí, así que por ahora estoy casi por la mitad, es por eso que me falta aprender más cosas 
+       todavía.</p>
+    <button class="toggle-button" onclick="toggleContent('formacion')">Mostrar/ocultar</button>
+    <hr>
+    <h2>Idiomas</h2>
+    <p class="hidden" id="idiomas">
+       Por el momento solo sé 2 idiomas que son el español y el inglés, ambas son bastante importantes 
+       para mi carrera es por eso que tengo un conocimiento bastante grande en ambos, pero me gustaría 
+       aprender otros idiomas por ejemplo el japonés ya que me gustaría ir a ese país.</p>
+    <button class="toggle-button" onclick="toggleContent('idiomas')">Mostrar/ocultar</button>
+    
+    <button id="dark-mode-toggle">Alternar Modo Oscuro</button>
+
+    <div id="clock" class="digital-clock"></div>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('hidden');
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const clockElement = document.getElementById('clock');
+            const timeString = now.toLocaleTimeString();
+            clockElement.textContent = 'Hora: ' + timeString;
+        }
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
